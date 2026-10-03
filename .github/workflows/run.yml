@@ -1,0 +1,47 @@
+name: Add photos to collections
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # hourly; Unsplash demo tier allows 50 requests/hour
+  workflow_dispatch:
+
+concurrency:
+  group: runner
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check whether the plan is finished
+        id: check
+        run: |
+          # DONE = plan finished; PAUSED = deliberately switched off (delete the file to start)
+          if [ -f DONE ] || [ -f PAUSED ]; then echo "done=true" >> "$GITHUB_OUTPUT"; else echo "done=false" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.done == 'false'
+        with:
+          python-version: "3.12"
+
+      - name: Run
+        if: steps.check.outputs.done == 'false'
+        env:
+          UNSPLASH_TOKEN: ${{ secrets.UNSPLASH_TOKEN }}
+        run: |
+          python runner.py | tee run.log
+          if grep -q "PLAN COMPLETE" run.log; then date -u > DONE; fi
+
+      - name: Commit progress
+        if: steps.check.outputs.done == 'false'
+        run: |
+          git config user.name "collections-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add state.json DONE 2>/dev/null || git add state.json
+          git diff --cached --quiet || git commit -m "Progress: $(tail -1 run.log | cut -c1-120)"
+          git push

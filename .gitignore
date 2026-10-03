@@ -1,0 +1,4 @@
+data/*
+!data/themes.json
+__pycache__/
+run.log
