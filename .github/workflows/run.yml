@@ -1,9 +1,14 @@
 name: Add photos to collections
 
+# Self-sustaining chain. Each run does up to 6 batches of 45 API calls, one per
+# Unsplash hourly allowance (demo tier: 50 requests/hour), then starts the next
+# run itself. GitHub's scheduler proved unreliable (1 scheduled run fired in 8
+# hours), so the schedule below is only a backstop in case the chain breaks.
+
 on:
-  schedule:
-    - cron: "*/10 * * * *"   # every 10 min: GitHub drops many scheduled runs, so poll often; runs exit at once when the hourly Unsplash allowance (50) is spent
   workflow_dispatch:
+  schedule:
+    - cron: "41 */6 * * *"
 
 concurrency:
   group: runner
@@ -11,37 +16,52 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check whether the plan is finished
-        id: check
-        run: |
-          # DONE = plan finished; PAUSED = deliberately switched off (delete the file to start)
-          if [ -f DONE ] || [ -f PAUSED ]; then echo "done=true" >> "$GITHUB_OUTPUT"; else echo "done=false" >> "$GITHUB_OUTPUT"; fi
-
       - uses: actions/setup-python@v5
-        if: steps.check.outputs.done == 'false'
         with:
           python-version: "3.12"
 
-      - name: Run
-        if: steps.check.outputs.done == 'false'
+      - name: Batches
+        id: batches
         env:
           UNSPLASH_TOKEN: ${{ secrets.UNSPLASH_TOKEN }}
         run: |
-          python runner.py | tee run.log
-          if grep -q "PLAN COMPLETE" run.log; then date -u > DONE; fi
-
-      - name: Commit progress
-        if: steps.check.outputs.done == 'false'
-        run: |
           git config user.name "collections-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add state.json DONE 2>/dev/null || git add state.json
-          git diff --cached --quiet || git commit -m "Progress: $(tail -1 run.log | cut -c1-120)"
-          git push
+          echo "finished=false" >> "$GITHUB_OUTPUT"
+          for i in 1 2 3 4 5 6; do
+            git pull -q --rebase
+            if [ -f DONE ] || [ -f PAUSED ]; then
+              echo "DONE or PAUSED present, stopping"
+              echo "finished=true" >> "$GITHUB_OUTPUT"
+              break
+            fi
+            python runner.py | tee run.log
+            if grep -q "PLAN COMPLETE" run.log; then date -u > DONE; fi
+            git add state.json
+            [ -f DONE ] && git add DONE
+            git diff --cached --quiet || git commit -q -m "Progress: $(grep 'calls this run' run.log | cut -c1-120)"
+            git pull -q --rebase && git push -q
+            if [ -f DONE ]; then
+              echo "finished=true" >> "$GITHUB_OUTPUT"
+              break
+            fi
+            if [ "$i" -lt 6 ]; then
+              echo "sleeping 61 minutes for the next hourly allowance"
+              sleep 3660
+            fi
+          done
+
+      - name: Start the next run
+        if: steps.batches.outputs.finished == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run run.yml --ref main
