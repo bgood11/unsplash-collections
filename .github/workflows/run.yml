@@ -2,7 +2,7 @@ name: Add photos to collections
 
 on:
   schedule:
-    - cron: "17 * * * *"   # hourly; Unsplash demo tier allows 50 requests/hour
+    - cron: "*/10 * * * *"   # every 10 min: GitHub drops many scheduled runs, so poll often; runs exit at once when the hourly Unsplash allowance (50) is spent
   workflow_dispatch:
 
 concurrency:
