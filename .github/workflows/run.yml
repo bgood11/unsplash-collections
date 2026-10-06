@@ -18,6 +18,7 @@ permissions:
   contents: write
   actions: write
   id-token: write
+  issues: write
 
 jobs:
   run:
@@ -41,6 +42,7 @@ jobs:
           ANTHROPIC_FEDERATION_RULE_ID: fdrl_01GAxMPKHQrVjVW85cS7j77h
           ANTHROPIC_ORGANIZATION_ID: 7e6bf58c-ef37-40fc-a5c5-c1d9c780e50d
           ANTHROPIC_SERVICE_ACCOUNT_ID: svac_01JDzvtutJHaMAkTuZtbuLPZ
+          GH_TOKEN: ${{ github.token }}
           ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/anthropic-oidc-token
         run: |
           git config user.name "collections-bot"
@@ -53,11 +55,23 @@ jobs:
           for i in 1 2 3 4 5 6; do
             git pull -q --rebase
             get_oidc
-            [ "$i" = 1 ] && { python sweep.py --selftest || echo "ANTHROPIC AUTH SELF-TEST FAILED"; }
-            [ -f PAUSED ] || python sweep.py   # finds new uploads; reopens the plan (removes DONE) if there is work
+            FAILED=""
+            if [ "$i" = 1 ]; then python sweep.py --selftest || { echo "::error::Anthropic auth self-test failed"; FAILED=1; }; fi
+            # finds new uploads; reopens the plan (removes DONE) if there is work
+            if [ -z "$FAILED" ] && [ ! -f PAUSED ]; then python sweep.py || { echo "::error::sweep reported errors"; FAILED=1; }; fi
+            if [ -s sweep_comment.md ]; then
+              N=$(gh issue list --search 'Sweep log in:title' --state open --json number -q '.[0].number')
+              [ -n "$N" ] || N=$(gh issue create --title "Sweep log" --assignee bgood11 --body "Each comment is a daily sweep that filed new uploads into collections." | grep -o '[0-9]*$')
+              gh issue comment "$N" --body-file sweep_comment.md && rm -f sweep_comment.md
+            fi
             if [ -f DONE ] || [ -f PAUSED ]; then
               echo "DONE or PAUSED present, stopping"
               echo "finished=true" >> "$GITHUB_OUTPUT"
+              if [ -n "$FAILED" ]; then
+                git add -A; git diff --cached --quiet || git commit -q -m "Sweep state"
+                git pull -q --rebase && git push -q
+                echo "::error::sweep failed (see above)"; exit 1
+              fi
               break
             fi
             USED=$(cat sweep_calls.txt 2>/dev/null || echo 0)
@@ -66,6 +80,7 @@ jobs:
             git add -A
             git diff --cached --quiet || git commit -q -m "Progress: $(grep 'calls this run' run.log | cut -c1-120)"
             git pull -q --rebase && git push -q
+            if [ -n "$FAILED" ]; then echo "::error::stopping so the failure is visible (GitHub emails failed runs)"; exit 1; fi
             if [ -f DONE ]; then
               echo "finished=true" >> "$GITHUB_OUTPUT"
               break

@@ -165,6 +165,7 @@ def main():
     unsorted = load(UNSORTED, [])
     cols = {c["key"]: c for c in plan["collections"]}
     log = []
+    errors = 0
 
     if "--selftest" in sys.argv:
         print("anthropic auth self-test:", ask_claude("Reply with the single word OK.", 20))
@@ -207,6 +208,7 @@ def main():
             try:
                 result.update(classify(chunk, themes))
             except Exception as e:  # classifier unreachable: leave these unknown, retry later
+                errors += 1
                 print(f"classifier failed for {len(chunk)} photos: {e}")
         for p in ready:
             r = result.get(p["id"])
@@ -248,6 +250,7 @@ def main():
                 added += len(ids)
                 log.append(f"- NEW COLLECTION **{g['title']}** created with {len(ids)} photos")
         except Exception as e:
+            errors += 1
             print(f"cluster proposal failed: {e}")
 
     # 5. persist everything, reopen the plan if there is new work
@@ -263,9 +266,14 @@ def main():
             f.write(f"\n## {__import__('datetime').datetime.utcnow():%Y-%m-%d %H:%M} UTC: {len(placed_ids)} new photos, {added} placements\n")
             f.write("\n".join(log) + "\n")
     open(CALLS_FILE, "w").write(str(calls))
+    comment = os.path.join(ROOT, "sweep_comment.md")
+    if log:
+        open(comment, "w").write(f"@bgood11 Filed {len(placed_ids)} new photo(s), {added} placement(s):\n\n" + "\n".join(log) + "\n")
+    elif os.path.exists(comment):
+        os.remove(comment)
     print(f"sweep: {len(new)} new photos seen, {len(placed_ids)} classified, {added} placements added, "
           f"{len(unsorted)} unsorted, {calls} API calls")
-    return 0
+    return 2 if errors else 0
 
 
 if __name__ == "__main__":
