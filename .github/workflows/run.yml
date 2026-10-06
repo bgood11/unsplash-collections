@@ -33,21 +33,23 @@ jobs:
         id: batches
         env:
           UNSPLASH_TOKEN: ${{ secrets.UNSPLASH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           git config user.name "collections-bot"
           git config user.email "actions@users.noreply.github.com"
           echo "finished=false" >> "$GITHUB_OUTPUT"
           for i in 1 2 3 4 5 6; do
             git pull -q --rebase
+            [ -f PAUSED ] || python sweep.py   # finds new uploads; reopens the plan (removes DONE) if there is work
             if [ -f DONE ] || [ -f PAUSED ]; then
               echo "DONE or PAUSED present, stopping"
               echo "finished=true" >> "$GITHUB_OUTPUT"
               break
             fi
-            python runner.py | tee run.log
+            USED=$(cat sweep_calls.txt 2>/dev/null || echo 0)
+            BUDGET=$((45 - USED)) python runner.py | tee run.log
             if grep -q "PLAN COMPLETE" run.log; then date -u > DONE; fi
-            git add state.json
-            [ -f DONE ] && git add DONE
+            git add -A
             git diff --cached --quiet || git commit -q -m "Progress: $(grep 'calls this run' run.log | cut -c1-120)"
             git pull -q --rebase && git push -q
             if [ -f DONE ]; then

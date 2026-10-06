@@ -19,3 +19,18 @@ Organises the photos on unsplash.com/@bgoodpic into public collections.
 - Finished: the job writes `DONE` and stops itself.
 
 The Unsplash OAuth token is stored as the repository secret `UNSPLASH_TOKEN`.
+
+## Daily sweep of new uploads
+
+`sweep.py` runs at the start of every batch. If you have uploaded photos since the last sweep it
+reads each one's description and EXIF, asks Claude Haiku which collections it belongs in, and appends
+the placements to `plan.json` for `runner.py` to add. When nothing is new it costs one API call.
+
+- Theme: chosen from the 19 theme collections using the rules in `data/themes.json`.
+- Film stock: from ISO and camera (250 Vision3 250D, 400 Ultramax, 500/640 Vision3 500T, 200 Gold 200,
+  or Fujicolor 200 when shot on the Olympus mju). ISO 200 is a guess and is flagged in `SWEEP_LOG.md`.
+- A photo that fits no theme waits in `unsorted.json`. Once 8 or more share a clear theme, the job
+  creates a new public collection for them (and adds its rule to `data/themes.json`).
+- Needs the repository secret `ANTHROPIC_API_KEY`. Without it the sweep is skipped.
+- Every sweep appends what it filed where to `SWEEP_LOG.md`.
+- Existing photos are not re-sorted when a new collection is created; only new uploads.
