@@ -17,6 +17,7 @@ concurrency:
 permissions:
   contents: write
   actions: write
+  id-token: write
 
 jobs:
   run:
@@ -29,17 +30,30 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Anthropic SDK
+        run: pip install -q --upgrade anthropic
+
       - name: Batches
         id: batches
         env:
           UNSPLASH_TOKEN: ${{ secrets.UNSPLASH_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Workload identity federation: no stored key. These IDs are identifiers, not secrets.
+          ANTHROPIC_FEDERATION_RULE_ID: fdrl_01GAxMPKHQrVjVW85cS7j77h
+          ANTHROPIC_ORGANIZATION_ID: 7e6bf58c-ef37-40fc-a5c5-c1d9c780e50d
+          ANTHROPIC_SERVICE_ACCOUNT_ID: svac_01JDzvtutJHaMAkTuZtbuLPZ
+          ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/anthropic-oidc-token
         run: |
           git config user.name "collections-bot"
           git config user.email "actions@users.noreply.github.com"
           echo "finished=false" >> "$GITHUB_OUTPUT"
+          get_oidc() {  # GitHub identity tokens expire within minutes, so mint a fresh one per batch
+            curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" | jq -r .value > "$ANTHROPIC_IDENTITY_TOKEN_FILE"
+          }
           for i in 1 2 3 4 5 6; do
             git pull -q --rebase
+            get_oidc
+            [ "$i" = 1 ] && { python sweep.py --selftest || echo "ANTHROPIC AUTH SELF-TEST FAILED"; }
             [ -f PAUSED ] || python sweep.py   # finds new uploads; reopens the plan (removes DONE) if there is work
             if [ -f DONE ] || [ -f PAUSED ]; then
               echo "DONE or PAUSED present, stopping"

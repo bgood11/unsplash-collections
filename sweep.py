@@ -93,16 +93,15 @@ def stock_from_exif(exif, bw):
     return None, False
 
 
-def anthropic(prompt, max_tokens=4000):
-    body = json.dumps({"model": MODEL, "max_tokens": max_tokens,
-                       "messages": [{"role": "user", "content": prompt}]}).encode()
-    req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=body, method="POST",
-                                 headers={"x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01",
-                                          "content-type": "application/json"})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        text = json.load(r)["content"][0]["text"]
+def ask_claude(prompt, max_tokens=4000):
+    """Official SDK: uses ANTHROPIC_API_KEY if set, else workload identity federation
+    (ANTHROPIC_FEDERATION_RULE_ID / ORGANIZATION_ID / SERVICE_ACCOUNT_ID / IDENTITY_TOKEN_FILE)."""
+    import anthropic as sdk
+    msg = sdk.Anthropic().messages.create(model=MODEL, max_tokens=max_tokens,
+                                          messages=[{"role": "user", "content": prompt}])
+    text = msg.content[0].text
     m = re.search(r"[\[{].*[\]}]", text, re.S)
-    return json.loads(m.group(0))
+    return json.loads(m.group(0)) if m else text
 
 
 def fake_classify(photos, themes):
@@ -135,7 +134,7 @@ Photos (id | description):
 {items}
 
 Reply with only a JSON object mapping each id to {{"primary":..., "secondary":..., "bw":..., "label":...}}."""
-    return anthropic(prompt)
+    return ask_claude(prompt)
 
 
 def propose_clusters(unsorted, themes):
@@ -153,7 +152,7 @@ Photos (id | label | description):
 
 Reply with only a JSON array (possibly empty) of objects:
 {{"key": "kebab-case-key", "title": "Collection Title (2-4 words)", "description": "One sentence.", "rule": "One sentence telling a classifier which photos belong.", "ids": ["..."]}}"""
-    return anthropic(prompt)
+    return ask_claude(prompt)
 
 
 def main():
@@ -167,8 +166,11 @@ def main():
     cols = {c["key"]: c for c in plan["collections"]}
     log = []
 
-    if not ANTHROPIC_KEY and not FAKE:
-        print("ANTHROPIC_API_KEY not set: sweep skipped (add it as a repository secret)")
+    if "--selftest" in sys.argv:
+        print("anthropic auth self-test:", ask_claude("Reply with the single word OK.", 20))
+        return 0
+    if not ANTHROPIC_KEY and not os.environ.get("ANTHROPIC_FEDERATION_RULE_ID") and not FAKE:
+        print("no Anthropic credentials configured: sweep skipped")
         open(CALLS_FILE, "w").write("0")
         return 0
 
