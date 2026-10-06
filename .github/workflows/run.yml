@@ -52,11 +52,19 @@ jobs:
             curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
               "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" | jq -r .value > "$ANTHROPIC_IDENTITY_TOKEN_FILE"
           }
+          show_claims() {  # payload claims of the GitHub identity token (not secret) for diagnosing a rule mismatch
+            python - <<'PYEOF'
+import base64, json, os
+t = open(os.environ["ANTHROPIC_IDENTITY_TOKEN_FILE"]).read().strip().split(".")[1]
+c = json.loads(base64.urlsafe_b64decode(t + "=" * (-len(t) % 4)))
+print("OIDC claims:", {k: c.get(k) for k in ("iss", "sub", "aud", "ref", "repository", "event_name")})
+PYEOF
+          }
           for i in 1 2 3 4 5 6; do
             git pull -q --rebase
             get_oidc
             FAILED=""
-            if [ "$i" = 1 ]; then python sweep.py --selftest || { echo "::error::Anthropic auth self-test failed"; FAILED=1; }; fi
+            if [ "$i" = 1 ]; then python sweep.py --selftest || { show_claims; echo "::error::Anthropic auth self-test failed"; FAILED=1; }; fi
             # finds new uploads; reopens the plan (removes DONE) if there is work
             if [ -z "$FAILED" ] && [ ! -f PAUSED ]; then python sweep.py || { echo "::error::sweep reported errors"; FAILED=1; }; fi
             if [ -s sweep_comment.md ]; then
