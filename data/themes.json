@@ -1,21 +1,97 @@
 {
-  "festival-season": {"title": "Festival Season", "description": "Summer music festivals, gigs and crowds, mostly shot on 35mm film.", "rule": "Music festivals, concerts, gigs, stages, crowds, festival campsites, wristbands, live music venues."},
-  "street-life": {"title": "Street Life", "description": "Everyday people and moments on city streets, markets and town squares.", "rule": "Candid people in streets, markets, shops, squares, parades, pedestrians. Not empty buildings."},
-  "after-dark": {"title": "After Dark", "description": "Cities and streets at night: light trails, neon and lamplight.", "rule": "Night scenes, light trails, neon, illuminated buildings, dusk cityscapes."},
-  "coast-and-cliffs": {"title": "Coast & Cliffs", "description": "Beaches, sea cliffs, grottoes and the shoreline.", "rule": "Beaches, cliffs, sea, waves, sand, piers, driftwood, grottoes, people at the beach."},
-  "harbours-and-boats": {"title": "Harbours & Boats", "description": "Fishing boats, marinas, harbours and riverside moorings.", "rule": "Boats are the subject: harbours, marinas, moorings, boatyards, rowing boats, ferries."},
-  "tuscany": {"title": "Tuscany on Film", "description": "Hill towns, cypress roads and summer days in Tuscany.", "rule": "Clearly Tuscany or Italy: Siena, Florence, hill towns, cypress landscapes, Italian streets and signs."},
-  "algarve": {"title": "Algarve", "description": "Whitewashed towns, coves and marinas on Portugal's southern coast.", "rule": "Clearly the Algarve or Portugal: Alvor, Lagos, Portuguese tiles, flags, Algarve coast."},
-  "alpine": {"title": "Alpine", "description": "Snow, mountain huts and high peaks.", "rule": "Snow, mountains, ski areas, alpine lodges and chalets, winter landscapes."},
-  "architecture": {"title": "Facades & Architecture", "description": "Buildings, windows, doors, towers and the shapes cities are made of.", "rule": "Buildings or architectural detail are the subject: facades, windows, doors, churches, brutalist and modern buildings, walkways."},
-  "countryside": {"title": "Countryside & Landscapes", "description": "Fields, rivers, hills and open country.", "rule": "Rural landscapes, fields, rivers, lakes, forests, hills (not alpine snow, not coast)."},
-  "gardens-and-flowers": {"title": "Gardens & Flowers", "description": "Blooms, borders, garden paths and green spaces.", "rule": "Flowers, gardens, plants, parks, garden paths, botanical close-ups."},
-  "portraits": {"title": "Portraits & People", "description": "Faces and people as the subject, posed or candid.", "rule": "A person or people are the clear subject at close or medium range (portraits, couples, friends). Street crowds go to Street Life."},
-  "signs-and-lettering": {"title": "Signs & Lettering", "description": "Shop signs, neon, painted lettering and typography in the wild.", "rule": "Signage, lettering, neon signs, painted words and typography are the main interest."},
-  "wheels": {"title": "On Wheels", "description": "Classic cars, camper vans, bikes and scooters.", "rule": "Vehicles are the subject: classic cars, Fiat 500s, VW vans, bicycles, Vespas, buses, trains."},
-  "home-and-still-life": {"title": "Home & Still Life", "description": "Interiors, objects and seasonal still life.", "rule": "Interiors, rooms, homeware, objects, ceramics, seasonal decorations, still life arrangements, people decorating homes."},
-  "food-and-cafe": {"title": "Café Culture", "description": "Coffee, terraces, restaurants and food on the table.", "rule": "Food, drink, cafes, restaurant terraces, coffee, market produce as subject."},
-  "abstract": {"title": "Abstract & Texture", "description": "Colour, texture, light leaks and double exposures.", "rule": "Abstracts, textures, fabric folds, bokeh, light leaks, double exposures, patterns with no clear scene."},
-  "animals": {"title": "Dogs & Other Animals", "description": "Dogs, birds, livestock and the odd cat.", "rule": "An animal is the clear subject."},
-  "black-and-white": {"title": "Black & White Film", "description": "Monochrome frames, mostly on Ilford and Kodak black-and-white stock.", "rule": "Any monochrome / black-and-white photo (in addition to its subject theme)."}
+ "festival-season": {
+  "title": "Festival Season",
+  "description": "Summer music festivals, gigs and crowds, mostly shot on 35mm film.",
+  "rule": "Music festivals, concerts, gigs, stages, crowds, festival campsites, wristbands, live music venues."
+ },
+ "street-life": {
+  "title": "Street Life",
+  "description": "Everyday people and moments on city streets, markets and town squares.",
+  "rule": "Candid people in streets, markets, shops, squares, parades, pedestrians. Not empty buildings."
+ },
+ "after-dark": {
+  "title": "After Dark",
+  "description": "Cities and streets at night: light trails, neon and lamplight.",
+  "rule": "Night scenes, light trails, neon, illuminated buildings, dusk cityscapes."
+ },
+ "coast-and-cliffs": {
+  "title": "Coast & Cliffs",
+  "description": "Beaches, sea cliffs, grottoes and the shoreline.",
+  "rule": "Beaches, cliffs, sea, waves, sand, piers, driftwood, grottoes, people at the beach."
+ },
+ "harbours-and-boats": {
+  "title": "Harbours & Boats",
+  "description": "Fishing boats, marinas, harbours and riverside moorings.",
+  "rule": "Boats are the subject: harbours, marinas, moorings, boatyards, rowing boats, ferries."
+ },
+ "tuscany": {
+  "title": "Tuscany on Film",
+  "description": "Hill towns, cypress roads and summer days in Tuscany.",
+  "rule": "Clearly Tuscany or Italy: Siena, Florence, hill towns, cypress landscapes, Italian streets and signs."
+ },
+ "algarve": {
+  "title": "Algarve",
+  "description": "Whitewashed towns, coves and marinas on Portugal's southern coast.",
+  "rule": "Clearly the Algarve or Portugal: Alvor, Lagos, Portuguese tiles, flags, Algarve coast."
+ },
+ "alpine": {
+  "title": "Alpine",
+  "description": "Snow, mountain huts and high peaks.",
+  "rule": "Snow, mountains, ski areas, alpine lodges and chalets, winter landscapes."
+ },
+ "architecture": {
+  "title": "Facades & Architecture",
+  "description": "Buildings, windows, doors, towers and the shapes cities are made of.",
+  "rule": "Buildings or architectural detail are the subject: facades, windows, doors, churches, brutalist and modern buildings, walkways."
+ },
+ "countryside": {
+  "title": "Countryside & Landscapes",
+  "description": "Fields, rivers, hills and open country.",
+  "rule": "Rural landscapes, fields, rivers, lakes, forests, hills (not alpine snow, not coast)."
+ },
+ "gardens-and-flowers": {
+  "title": "Gardens & Flowers",
+  "description": "Blooms, borders, garden paths and green spaces.",
+  "rule": "Flowers, gardens, plants, parks, garden paths, botanical close-ups."
+ },
+ "portraits": {
+  "title": "Portraits & People",
+  "description": "Faces and people as the subject, posed or candid.",
+  "rule": "A person or people are the clear subject at close or medium range (portraits, couples, friends). Street crowds go to Street Life."
+ },
+ "signs-and-lettering": {
+  "title": "Signs & Lettering",
+  "description": "Shop signs, neon, painted lettering and typography in the wild.",
+  "rule": "Signage, lettering, neon signs, painted words and typography are the main interest."
+ },
+ "wheels": {
+  "title": "On Wheels",
+  "description": "Classic cars, camper vans, bikes and scooters.",
+  "rule": "Vehicles are the subject: classic cars, Fiat 500s, VW vans, bicycles, Vespas, buses, trains."
+ },
+ "home-and-still-life": {
+  "title": "Home & Still Life",
+  "description": "Interiors, objects and seasonal still life.",
+  "rule": "Interiors, rooms, homeware, objects, ceramics, seasonal decorations, still life arrangements, people decorating homes."
+ },
+ "food-and-cafe": {
+  "title": "Caf\u00e9 Culture",
+  "description": "Coffee, terraces, restaurants and food on the table.",
+  "rule": "Food, drink, cafes, restaurant terraces, coffee, market produce as subject."
+ },
+ "abstract": {
+  "title": "Abstract & Texture",
+  "description": "Colour, texture, light leaks and double exposures.",
+  "rule": "Abstracts, textures, fabric folds, bokeh, light leaks, double exposures, patterns with no clear scene."
+ },
+ "animals": {
+  "title": "Dogs & Other Animals",
+  "description": "Dogs, birds, livestock and the odd cat.",
+  "rule": "An animal is the clear subject."
+ },
+ "black-and-white": {
+  "title": "Black & White Film",
+  "description": "Monochrome frames, mostly on Ilford and Kodak black-and-white stock.",
+  "rule": "Any monochrome / black-and-white photo (in addition to its subject theme)."
+ }
 }
