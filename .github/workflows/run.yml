@@ -58,6 +58,8 @@ jobs:
             get_oidc
             FAILED=""
             if [ "$i" = 1 ]; then python sweep.py --selftest || { show_claims; echo "::error::Anthropic auth self-test failed"; FAILED=1; }; fi
+            # the self-test exchanged that identity token; each exchange needs a fresh one, so mint another for the sweep
+            if [ "$i" = 1 ]; then get_oidc; fi
             # finds new uploads; reopens the plan (removes DONE) if there is work
             if [ -z "$FAILED" ] && [ ! -f PAUSED ]; then python sweep.py || { echo "::error::sweep reported errors"; FAILED=1; }; fi
             if [ -s sweep_comment.md ]; then

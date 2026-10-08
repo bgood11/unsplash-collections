@@ -93,12 +93,18 @@ def stock_from_exif(exif, bw):
     return None, False
 
 
+_CLIENT = None
+
+
 def ask_claude(prompt, max_tokens=4000):
     """Official SDK: uses ANTHROPIC_API_KEY if set, else workload identity federation
     (ANTHROPIC_FEDERATION_RULE_ID / ORGANIZATION_ID / SERVICE_ACCOUNT_ID / IDENTITY_TOKEN_FILE)."""
     import anthropic as sdk
-    msg = sdk.Anthropic().messages.create(model=MODEL, max_tokens=max_tokens,
-                                          messages=[{"role": "user", "content": prompt}])
+    global _CLIENT  # one client per process: each new client repeats the token exchange, which a used identity token cannot do
+    if _CLIENT is None:
+        _CLIENT = sdk.Anthropic()
+    msg = _CLIENT.messages.create(model=MODEL, max_tokens=max_tokens,
+                                  messages=[{"role": "user", "content": prompt}])
     text = msg.content[0].text
     m = re.search(r"[\[{].*[\]}]", text, re.S)
     return json.loads(m.group(0)) if m else text
