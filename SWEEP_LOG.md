@@ -18,3 +18,45 @@
 - `Oyr3L6X3D_E` A tractor tyre fills the lower half of the frame, its deep tread block: On Wheels, Coast & Cliffs, Shot on Kodak Ultramax 400
 - `BIGCSr_duV0` Seen from above, one person sits in a blue folding chair on a wide str: Coast & Cliffs, Portraits & People, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
 - `_ABq0KTJLAs` A weathered timber stair stringer slopes across the frame beside a tub: Facades & Architecture, Coast & Cliffs, Shot on Kodak Vision3 250D
+
+## 2026-11-16 22:29 UTC: 40 new photos, 93 placements
+- `ZeYBQx-ifY8` A curly-coated brown dog sits side-on in a pool of low sunlight beside: Dogs & Other Animals, Home & Still Life, Shot on Kodak Vision3 250D
+- `VZRuHdKDC-E` On a busy cobbled lane, a man pushes a bicycle towards the camera, whi: Street Life, On Wheels, Shot on Kodak Ultramax 400
+- `Y6Ql9gB6H2s` A stallholder reaches one black-gloved hand towards the camera, holdin: Café Culture, Street Life, Shot on Kodak Ultramax 400
+- `rFA68_-7tn8` A man wheels a bicycle straight towards the camera along a narrow cobb: Street Life, On Wheels, Shot on Kodak Ultramax 400
+- `q_rwdH890Sw` Large instant noodle cups in pale pink packaging are stacked two high,: Abstract & Texture, Shot on Kodak Ultramax 400
+- `Z9wnj4syLpQ` A dark, rounded branch curves over a floor of brown leaves and pine ne: Abstract & Texture, Countryside & Landscapes, Shot on Kodak Ultramax 400
+- `hQkrlwD0n9E` Two thick bark-covered boughs cross the frame from left to right, one : Countryside & Landscapes, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `vea0rcK9huU` Three soft circles, one blue, one red and one green, stack down the fr: Abstract & Texture, Facades & Architecture, Shot on Kodak Ultramax 400
+- `vWEspxF0h4E` A tight landscape view of the red painted door of a telephone box show: Signs & Lettering, Facades & Architecture, Shot on Kodak Ultramax 400
+- `1HLIyg78gpY` A tall red-brick building with rows of arched white-framed windows sta: Facades & Architecture, Countryside & Landscapes, Shot on Kodak Ultramax 400
+- `qNSKBvSyL7s` A brown-orange brick block with small square windows stands across cal: Facades & Architecture, Shot on Kodak Ultramax 400
+- `-fI9RSum9WI` In this analogue film frame, an upright view through a gap shows a com: Home & Still Life, Abstract & Texture, Shot on Kodak Ultramax 400
+- `11Pchb-yyYE` A glossy green frog figure with a white belly sits on a shop shelf wit: Home & Still Life, Shot on Kodak Ultramax 400
+- `lyH2XG0VCWE` A pink-rendered townhouse is wrapped in a giant blue ribbon and bow, a: Abstract & Texture, Facades & Architecture, Shot on Kodak Ultramax 400
+- `yu15sN1Z4RE` Pedestrians fill a sloping cobbled lane at dusk, with a woman in a pal: Street Life, Shot on Kodak Ultramax 400
+- `8pe9JFFQ220` Two red pendant lamps hang in the foreground, one large and soft at th: Signs & Lettering, Café Culture, Shot on Kodak Ultramax 400
+- `sWZUcIzBhVM` A dark, narrow passage frames a bright open space at its far end, wher: Street Life, Café Culture, Shot on Kodak Ultramax 400
+- `JZfvcBXnDww` Taken on analogue film, the picture shows a narrow pink house tied up : Abstract & Texture, Street Life, Shot on Kodak Ultramax 400
+- `yayGuA_Z49A` A wall of capsule toy dispensers photographed on a steep diagonal, so : Abstract & Texture, Shot on Kodak Ultramax 400
+- `5wPIufSJsuI` Rows of small boxes in yellow, teal and lilac are stacked in stepped t: Abstract & Texture, Shot on Kodak Ultramax 400
+- `HlfRusN-tWI` Taken on analogue film, the picture runs along a shop shelf at close r: Café Culture, Shot on Kodak Ultramax 400
+- `DhiMCoDUlp0` The pointed corner of a dried brown leaf catches a light dusting of fr: Abstract & Texture, Shot on Kodak Ultramax 400
+- `NU6IJBzGKR8` An analogue film photograph of an open-air fruit and vegetable stall u: Café Culture, Street Life, Shot on Kodak Ultramax 400
+- `BnCX-Qa0wgg` In this analogue film frame, bright yellow noodle packets fill the who: Café Culture, Shot on Kodak Ultramax 400
+- `I_3DzBIeYGU` Two stallholders serve a customer at a fruit and vegetable stall, with: Café Culture, Shot on Kodak Ultramax 400
+- `Di56pYiXW-k` Seen across a counter, a cook turns food on a hot griddle with a long : Café Culture, Shot on Kodak Ultramax 400
+- `9lzezqvw8ik` Four cream cartons with red screw caps stand in a row on a shop shelf,: Café Culture, Shot on Kodak Ultramax 400
+- `1dwaoqmq4M4` This analogue film photograph looks up at a cluster of lit lanterns ha: Facades & Architecture, Shot on Kodak Ultramax 400
+- `vQePeIVmimM` The top corner of a dark teal editor window fills the lower half of th: Shot on Kodak Vision3 250D
+- `dgrIOIBCEV0` A crowded pedestrian street runs away between a half-timbered building: Street Life, Shot on Kodak Ultramax 400
+- `omOWqzgu7iI` A tilted view of a teal editor shows a rounded search bar with grey pl: Shot on Kodak Vision3 250D
+- `aFH42Tiq0jM` A close, upright view of the bright red painted door and frame of a te: Signs & Lettering, Shot on Kodak Ultramax 400
+- `QNm4chgpgxY` Shot on analogue film, this upright frame looks along a glass-roofed s: Street Life, Shot on Kodak Ultramax 400
+- `sSrcfyKF1aE` A shopfront in a narrow lane glows amber against a darkening lilac sky: After Dark, Signs & Lettering, Shot on Kodak Ultramax 400
+- `_JVfaB10gi4` A dark, deeply cracked branch angles down from the top centre to the l: Abstract & Texture, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `2gAw5sPH1nc` A narrow gap between dark, out-of-focus shapes frames a small food-pre: Café Culture, Shot on Kodak Ultramax 400
+- `cj923s0hiqM` A person in a dark helmet sits on a tall stool at a hatch counter, eat: Café Culture, Shot on Kodak Ultramax 400
+- `zVfJOLL6l_M` A white curved corner building rises above a dark shopfront, with two : After Dark, Street Life, Shot on Kodak Ultramax 400
+- `BRBWzJTd6oE` Wooden cafe tables and chairs stand empty in the foreground of a long,: Facades & Architecture, Shot on Kodak Ultramax 400
+- `Vq1BrBYQT_0` A rounded search bar with pale grey placeholder text crosses the top o: Shot on Kodak Vision3 250D
