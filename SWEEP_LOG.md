@@ -103,3 +103,6 @@
 - `I2aX4qVO6kA` Ripe hawthorn berries hang in clusters from a branch, lit from behind : Gardens & Flowers
 - `amVn5VNspmU` A bow of green velvet ribbon sits against a red flocked surface, its w: Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
 - `U_mZVa-K0U8` Broad red and off-white stripes sweep across the frame with a gentle w: Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+
+## 2026-11-17 22:19 UTC: 1 new photos, 2 placements
+- `pFNDpJIQG9w` A red flocked reindeer head with golden antlers faces left in three-qu: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
