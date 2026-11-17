@@ -60,3 +60,46 @@
 - `zVfJOLL6l_M` A white curved corner building rises above a dark shopfront, with two : After Dark, Street Life, Shot on Kodak Ultramax 400
 - `BRBWzJTd6oE` Wooden cafe tables and chairs stand empty in the foreground of a long,: Facades & Architecture, Shot on Kodak Ultramax 400
 - `Vq1BrBYQT_0` A rounded search bar with pale grey placeholder text crosses the top o: Shot on Kodak Vision3 250D
+
+## 2026-11-17 21:18 UTC: 41 new photos, 78 placements
+- `gTzi-BWuQSA` A glossy toy figure with a balloon-animal head stands on a polished wo: Home & Still Life, Shot on Kodak Vision3 250D
+- `_WJVU7pl0g8` Seen from above and behind, a person types on an open laptop with both: Home & Still Life, Shot on Kodak Vision3 250D
+- `L0y7yL_4Ql4` Plush, chenille-wrapped candy canes in red and white stripes crowd the: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `ngwub8UkAMQ` Bold red and white candy stripes run diagonally across several overlap: Abstract & Texture, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `cziVfMst-uM` A person crouches on a rounded stone at the water's edge beneath a bri: Portraits & People, Coast & Cliffs, Shot on Kodak Ultramax 400
+- `CFYMrjUtKH8` Two smooth, frosted pebbles are balanced one on top of the other at th: Abstract & Texture, Shot on Kodak Vision3 250D
+- `oyhC5gQUc1w` Two flat rails of a ladder angle upward across the frame, their surfac: Abstract & Texture, Shot on Kodak Vision3 250D
+- `j8rEE-5A8so` A small piece of frosted green sea glass sits on top of two paler, mil: Home & Still Life, Shot on Kodak Vision3 250D
+- `qRF9Rib6VAw` A heap of glossy cream curling ribbon spills across the frame, with on: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `HLbr17bFVw4` Three screens crowd the frame, a dark edge at the far left, a larger d: Home & Still Life, Shot on Kodak Vision3 250D
+- `aHQwJ65U850` Two pinecones seen from above sit in the middle of a frosted pine garl: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `wXt0Clpo1aE` Red velvet ribbon wraps diagonally around a glossy gold bauble, whose : Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `K7WaLp9CiyE` A cable-knit garment hangs in vertical columns of braided wool, shot s: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `E2JBK6vtHvs` A pair of bright green sunglasses fills the circular fisheye frame, wi: Home & Still Life, Shot on Kodak Vision3 250D
+- `t7ga53xVQxw` A steeply tilted close view of a dark editor window, with a file list : Home & Still Life, Shot on Kodak Vision3 250D
+- `NYsQSWpZbQc` A green glitter ornament fills the upright frame, its surface a dense : Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `7ES6Pue-nH4` A dense bank of small white daisy-like flowers with yellow centres and: Gardens & Flowers, Shot on Kodak Vision3 250D
+- `p6Z4TmGgi9I` Snow-flocked fir sprays hang down through the frame, their flat layers: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `26PHBjC11fM` Glossy red baubles with broad matt cream stripes spiral across the fra: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `jdWCQLG1NFA` Snow-flocked fir branches slope diagonally through the frame, their sm: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `k8YFQVnFNyk` A hand holds two wrapped hygiene pads in white packaging with pink che: Home & Still Life, Shot on Kodak Vision3 250D
+- `zOtKx7a80R4` A hand rests lightly on a white rail with two fingers over it, the nai: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `weemq_k9fNM` A single slice of pepperoni pizza sits on a scarred dark wooden board,: Café Culture, Shot on Kodak Vision3 250D
+- `auXhmXRrXuQ` In this analogue film frame, red and white ribbons of light slide acro: After Dark, Facades & Architecture, Shot on Kodak Vision3 500T
+- `oSfSKAsm3e0` A small green piece of sea glass lies across a larger, pale blue piece: Abstract & Texture, Shot on Kodak Vision3 250D
+- `0EWddu8_oLU` A curly-coated dog tilts its head up towards the camera, its damp nose: Dogs & Other Animals, Home & Still Life, Shot on Kodak Vision3 250D
+- `lnwl_6H_Q2E` Dry, curled leaves hang from a pale twig in warm sun against a soft bl: Abstract & Texture
+- `TM5dEWXEQ6o` Hexagonal wire netting stretches over weathered timber boards beside a: Abstract & Texture
+- `7QiSyyCbGi8` A blurred hand lifts the corner of a rainbow-striped cotton bandana ha: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `OTQ5iPyebt0` In this analogue film frame, an instant print showing a grey sea with : Abstract & Texture, Shot on Kodak Vision3 250D
+- `gguNOynBynM` Clusters of glossy red berries and frosted pine sprigs ring a mirrored: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `mw8JTJsBlMg` Rows of tall dark diamonds alternate with pale cream ones across a she: Abstract & Texture, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `dZcefRFNQOQ` Rugged bark ridges dotted with pale lichen fill the frame in sharp, su: Abstract & Texture
+- `Uk4X6wcATws` Narrow stripes in red, near-black and gold run across a pale cream she: Abstract & Texture, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `aW7gKRz75II` A row of brass bells hangs together, each on a thin red strap, filling: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `AHokHEbI5cs` Ready-made bows of shiny red and green ribbon hang in tight curled loo: Home & Still Life, Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `enhayFqb3tk` White lattice tower rises on the right, with a curving blue slide wrap: Shot on Kodak Vision3 250D
+- `-vcZVrBWlxI` Plastic fish crates are stacked in a sunlit corner beside a white-pain: Harbours & Boats, Shot on Kodak Ultramax 400
+- `I2aX4qVO6kA` Ripe hawthorn berries hang in clusters from a branch, lit from behind : Gardens & Flowers
+- `amVn5VNspmU` A bow of green velvet ribbon sits against a red flocked surface, its w: Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
+- `U_mZVa-K0U8` Broad red and off-white stripes sweep across the frame with a gentle w: Shot on Kodak Gold 200 (ISO 200: Gold vs Fujicolor is a guess)
